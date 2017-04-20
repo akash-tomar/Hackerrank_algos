@@ -5,22 +5,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SamAndSubstrings {
-	public static ArrayList<String> Substring(String str) {
-		if(str.length()==0) {
-			return new ArrayList<String>();
-			
-		}
-		
-		ArrayList<String> subOutput=Substring(str.substring(1));
-		long beginIndex=subOutput.size();
-		for(int i=0;i<beginIndex;i++) {
-			if((subOutput.get(i)).charAt(0)==str.charAt(1)) {
-				subOutput.add(str.charAt(0)+subOutput.get(i)); 
-			}
-		}
-		subOutput.add(str.charAt(0)+"");
-		return subOutput;
-	}
 	
 	public static ArrayList<String> getSubstringsIterative(String str) {
 		long ans = 0;
