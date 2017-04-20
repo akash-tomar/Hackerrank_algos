@@ -13,10 +13,10 @@ public class SherlockAndCost {
 			return diff;
 		}
 		int max = Integer.MIN_VALUE;
-		for(int i=1;i<=arr[index];i++) {
-			arr_so_far[index]=i;
-			max= Math.max(max,getMaxDiff(arr,arr_so_far,index+1));
-		}
+		arr_so_far[index]=1;
+		max= Math.max(max,getMaxDiff(arr,arr_so_far,index+1));
+		arr_so_far[index]=arr[index];
+		max= Math.max(max,getMaxDiff(arr,arr_so_far,index+1));
 		return max;
 	}
 
@@ -33,7 +33,6 @@ public class SherlockAndCost {
 			int[] arr_so_far = new int[n];
 			System.out.println(getMaxDiff(arr, arr_so_far, 0));
  		}
-
 	}
 
 }
